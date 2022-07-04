@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  width: 50%;
+  position: relative;
+}
+
+.wallpaper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner {
+  border-top-left-radius: 60px;
+  overflow: hidden;
+  width: 55%;
+  height: 100%;
+  position: absolute;
+  /* float: right; */
+  background-color: aquamarine;
+  right: 0;
+}
+
+.banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/// darken a color
+/// @param {Color} $color - Color to shade
+/// @param {Number} $percentage - Percentage of black in the returned color
+/// @return {Color} - The darkened color
+@function darken($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}
+
+
+// make color transparent
+/// @param {Color} $color - Color to shade
+/// @param {Number} $percentage - Percentage of black in the returned color
+/// @return {Color} - The darkened color
+@function lighten($color,$percentage){
+  @return rgba($color, $percentage);
+}
+
+.bookMark {
+  background-color: #FAA;
+  transform: skew(-10deg);
+  width: 70px;
+  padding: 12px 10px;
+  transform: skew(-10deg);
+  width: 70px;
+  margin-left: -5px;
+  margin-top: 10px;
+  border-radius: 0 2px 3px 0;
+  box-shadow: 2px 2px 1px darken(#FAA, 70%);
+}
+
+.title {
+  margin-left: 20px;
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.keywordList {
+  list-style: none;
+  margin: 20px;
+  margin-top: auto;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  justify-content: flex-start;
+}
+
+.keyword {
+  background: lighten(darkgray, .4);
+  border-radius: 100px;
+  padding: 10px;
+  margin: 5px;
+  margin-left: 0px;
+}
