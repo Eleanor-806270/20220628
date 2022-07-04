@@ -1,15 +1,19 @@
 import React from 'react'
 import style from '../../css/prodItem.module.scss'
 
-const Prod = () => {
+const Prod = ({prod}) => {
+  const { title, imageSrc, imageAlt, price, link } = prod
+
   return (
+    <a href={link}>
     <div className={style.container}>
       <div className={style.imageWrapper}>
-        <img src="https://fakeimg.pl/180/" alt="prod" />
+        <img src={imageSrc} alt={imageAlt} />
       </div>
-      <div className={style.title}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magnam sunt libero perspiciatis maxime soluta reiciendis quo ipsum laudantium esse asperiores ex minima dolorem fuga, quasi temporibus animi iusto incidunt.</div>
-      <div className={style.price}>$123</div>
+      <div className={style.title}>{title}</div>
+      <div className={style.price}>${price}</div>
     </div>
+    </a>
   )
 }
 
